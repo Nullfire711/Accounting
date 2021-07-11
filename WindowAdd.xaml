@@ -1,0 +1,154 @@
+﻿<Window x:Class="Accounting.WindowAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Accounting"
+        mc:Ignorable="d"
+        Title="" 
+        Height="530"
+        Width="300"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center">
+
+            <TextBlock Text="ДОБАВЛЕНИЕ"
+                       FontSize="20"
+                       HorizontalAlignment="Center"
+                       Margin="5"/>
+
+            <TextBlock Text="ФАМИЛИЯ"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       Margin="5"/>
+
+            <TextBox x:Name="TBSecondName"
+                     FontSize="14"
+                     Height="20"
+                     Width="200"
+                     HorizontalContentAlignment="Center"/>
+
+            <TextBlock Text="ИМЯ"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       Margin="5"/>
+
+            <TextBox x:Name="TBFirstName"
+                     FontSize="14"
+                     Height="20"
+                     Width="200"
+                     HorizontalContentAlignment="Center"/>
+
+            <TextBlock Text="ОТЧЕСТВО"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       Margin="5"/>
+
+            <TextBox x:Name="TBMiddleName" 
+                     FontSize="14"
+                     Height="20"
+                     Width="200"
+                     HorizontalContentAlignment="Center"/>
+
+            <TextBlock Text="ТЕЛЕФОН"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       Margin="5"/>
+
+            <TextBox x:Name="TBPhone"
+                     FontSize="14"
+                     Height="20"
+                     Width="200"
+                     HorizontalContentAlignment="Center"/>
+
+            <TextBlock Text="e-mail"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       Margin="5"/>
+
+            <TextBox x:Name="TBEmail"
+                     FontSize="14"
+                     Height="20"
+                     Width="200"
+                     HorizontalContentAlignment="Center"/>
+
+            <TextBlock Text="НДФЛ"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       Margin="5"/>
+
+            <TextBox x:Name="TBTax"
+                     FontSize="14"
+                     Height="20"
+                     Width="200"
+                     HorizontalContentAlignment="Center"/>
+
+            <TextBlock Text="ДНЕЙ ОТРАБОТАНО"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       Margin="5"/>
+
+            <TextBox x:Name="TBWD"
+                     FontSize="14"
+                     Height="20"
+                     Width="200"
+                     HorizontalContentAlignment="Center"/>
+
+            <TextBlock Text="ДОЛЖНОСТЬ"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       Margin="5"/>
+
+            <ComboBox x:Name="CBRole"
+                      Margin="5">
+            </ComboBox>
+
+
+            <Button x:Name="SaveBTN"
+                    Content="СОХРАНИТЬ"
+                    Foreground="White"
+                    Background="#004681"
+                    BorderBrush="White"
+                    Height="35"
+                    Width="160" 
+                    Margin="0 10 0 5" 
+                    Click="SaveBTN_Click">
+
+                <Button.Resources>
+
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" 
+                                Value="15" />
+                    </Style>
+
+                </Button.Resources>
+
+            </Button>
+            
+            <Button x:Name="CancelBTN"
+                    Content="ОТМЕНИТЬ"
+                    Foreground="White"
+                    Background="#004681"
+                    BorderBrush="White"
+                    Height="35"
+                    Width="160" 
+                    Margin="0 0 0 0" 
+                    Click="CancelBTN_Click">
+                
+                <Button.Resources>
+
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" 
+                                Value="15" />
+                    </Style>
+
+                </Button.Resources>
+                
+            </Button>
+            
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,174 @@
+﻿<Page x:Class="Accounting.Pages.Service"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Accounting.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="475" d:DesignWidth="534"
+      Title="Service">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <ListView x:Name="LVService"
+                  Width="175"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="LVService_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="175" 
+                          Height="75">
+                        <StackPanel
+                                        VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Path=SecondName}"
+                                       Margin="5 0 5 0"/>
+                            <TextBlock Text="{Binding Path=FirstName}"
+                                       Margin="5 0 5 0"/>
+                            <TextBlock Text="{Binding Path=MiddleName}"
+                                       Margin="5 0 5 0"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Margin="10 0 0 0" Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid  Grid.IsSharedSizeScope="True">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="0" Margin="0 10 0 0" >
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="Label"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Заработная плата"
+                               VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="TBSalary"
+                             Grid.Column="1" 
+                             Margin=" 10 0 0 0 "
+                             HorizontalContentAlignment="Center"
+                             Height="30"
+                             FontSize="20"/>
+                </Grid>
+
+
+                <Grid  Grid.Row="1" Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="Label"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="НДФЛ"
+                                VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="TBTax"
+                             Grid.Column="1" 
+                             Margin=" 10 0 0 0 "
+                             HorizontalContentAlignment="Center"
+                             Height="30"
+                             FontSize="20"/>
+                </Grid>
+
+
+                <Grid Grid.Row="2" Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="Label"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Страховые взносы"
+                                VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="TBInsurance"
+                             Grid.Column="1" 
+                             Margin=" 10 0 0 0 "
+                             HorizontalContentAlignment="Center"
+                             Height="30"
+                             FontSize="20"/>
+                </Grid>
+                
+
+            </Grid>
+                
+            
+            <Grid Grid.Row="1">
+                <StackPanel VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="«НА РУКИ» БУДЕТ ВЫПЛАЧЕНО"
+                               Width="Auto"
+                               FontSize="22"
+                               Margin="10"/>
+                    <TextBox   x:Name="TBTotalSalary"
+                               FontSize="32"
+                               HorizontalContentAlignment="Center"
+                               VerticalAlignment="Center"
+                               Height="50"
+                               Width="330"/>
+                </StackPanel>
+            </Grid>
+
+            
+            <Grid Grid.Row="2">
+
+                <StackPanel Orientation="Vertical">
+                    <Button x:Name="Calculate"
+                            Content="РАССЧИТАТЬ"
+                            FontSize="30"
+                            Foreground="White"
+                            Background="#004681"
+                            BorderBrush="White"
+                            Margin="10 10 10 10"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Center" Click="Calculate_Click">
+                        
+                        <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                        </Button.Resources>
+                        
+                    </Button>
+                    
+                    <Button x:Name="SaveReport"
+                            Content="СОХРАНИТЬ ОТЧЕТ"
+                            FontSize="30"
+                            Foreground="White"
+                            Background="#004681"
+                            BorderBrush="White"
+                            Margin="10 10 10 10"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Center" Click="SaveReport_Click">
+                        
+                        <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                        </Button.Resources>
+                        
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+        </Grid>
+        
+    </Grid>
+</Page>
